@@ -94,7 +94,7 @@ class NovaInlineRelationshipObserver
      */
     protected function getModelRelationships(Model $model)
     {
-        return collect(Nova::newResourceFromModel($model)->fields(Nova::createFromRequest(request())))
+        return collect(Nova::newResourceFromModel($model)->fields(Nova::createFrom(request())))
             ->flatMap(function ($value) {
                 return Integrate::fields($value);
             })
