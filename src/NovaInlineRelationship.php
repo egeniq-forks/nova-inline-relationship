@@ -363,7 +363,9 @@ class NovaInlineRelationship extends Field
 
         $item['meta'] = $class->jsonSerialize();
         $item['meta']['singularLabel'] = $item['label'] ?? $attrib;
-        $item['meta']['placeholder'] = 'Add ' . $item['meta']['singularLabel'];
+        $item['meta']['placeholder'] = $item['meta']['singularLabel'];
+        $item['meta']['required'] = $item['required'];
+        $item['meta']['nullable'] = !$item['required'];
 
         return $item;
     }
@@ -497,6 +499,7 @@ class NovaInlineRelationship extends Field
                 'label' => $value->name,
                 'options' => $this->serializeOptions(data_get($value, 'optionsCallback'), false),
                 'rules' => $value->rules,
+                'required' => in_array('required', $value->rules),
                 'attribute' => $value->attribute,
             ];
         });

@@ -50,7 +50,10 @@ class RelationshipRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        $input = [$attribute => is_array($value) ? $value : json_decode($value, true)];
+        if (stristr($attribute, '.')) {
+            list ($resource, $attribute) = explode('.', $attribute);
+        }
+        $input = [$attribute => is_array($value) ? [$value[0]['values']] : json_decode($value, true)];
 
         $validator = Validator::make($input, $this->rules, $this->messages, $this->attributes);
 
