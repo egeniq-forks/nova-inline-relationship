@@ -250,12 +250,32 @@ class NovaInlineRelationship extends Field
      */
     public function getValueFromField(Field $field, NovaInlineRelationshipRequest $request, string $attribute)
     {
-        $temp = new stdClass();
+        $model = new stdClass();
 
-        // Fill Attributes in Field
-        $field->fillAttribute($request, $attribute, $temp, $attribute);
+        if ($request->exists($attribute)) {
+            tap($request->input($attribute), function ($value) use ($model, $attribute) {
+                $value = $this->isValidNullValue($value) ? null : $value;
 
-        return $temp->{$attribute} ?? null;
+                $this->fillModelWithData($model, $value, $attribute);
+            });
+        }
+
+        return $model->{$attribute} ?? null;
+    }
+
+    /**
+     * Fill the model's attribute with data.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model|\Laravel\Nova\Support\Fluent  $model
+     * @param  mixed  $value
+     * @param  string  $attribute
+     * @return void
+     */
+    public function fillModelWithData($model, $value, string $attribute)
+    {
+        $attributes = [Str::replace('.', '->', $attribute) => $value];
+
+        $model->{$attribute} = $attributes[$attribute];
     }
 
     /**
