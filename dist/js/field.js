@@ -8513,12 +8513,7 @@
                     field: r.field
                 }, {
                     value: (0, n.withCtx)((function () {
-                        return [(0, n.createElementVNode)("div", o, [(0, n.renderSlot)(t.$slots, "default", {}, (function () {
-                            return [(0, n.createElementVNode)("h4", {
-                                class: "font-normal text-80",
-                                textContent: (r.field.singularLabel)
-                            }, null, 8, i)]
-                        }))]), (0, n.createElementVNode)("div", a, [(0, n.createElementVNode)("div", null, [((0, n.openBlock)(!0), (0, n.createElementBlock)(n.Fragment, null, (0, n.renderList)(s.value, (function (t, e) {
+                        return [(0, n.createElementVNode)("div", a, [(0, n.createElementVNode)("div", null, [((0, n.openBlock)(!0), (0, n.createElementBlock)(n.Fragment, null, (0, n.renderList)(s.value, (function (t, e) {
                             return (0, n.openBlock)(), (0, n.createBlock)(l, {
                                 id: e,
                                 key: e,
