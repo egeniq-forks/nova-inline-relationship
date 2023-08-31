@@ -8516,7 +8516,7 @@
                         return [(0, n.createElementVNode)("div", o, [(0, n.renderSlot)(t.$slots, "default", {}, (function () {
                             return [(0, n.createElementVNode)("h4", {
                                 class: "font-normal text-80",
-                                textContent: (0, n.toDisplayString)(r.field.singularLabel)
+                                textContent: (r.field.singularLabel)
                             }, null, 8, i)]
                         }))]), (0, n.createElementVNode)("div", a, [(0, n.createElementVNode)("div", null, [((0, n.openBlock)(!0), (0, n.createElementBlock)(n.Fragment, null, (0, n.renderList)(s.value, (function (t, e) {
                             return (0, n.openBlock)(), (0, n.createBlock)(l, {
@@ -8537,7 +8537,7 @@
         }, 5560: (t, e, r) => {
             "use strict";
             r.d(e, {Z: () => zt});
-            var n = r(311), o = {key: 0}, i = {class: "w-full text-right"};
+            var n = r(311), o = {key: 0}, i = {class: "w-full"};
             var a = r(8718), u = r.n(a), c = {
                 preventInitialLoading: {type: Boolean, default: !1},
                 showHelpText: {type: Boolean, default: !1},
@@ -9572,7 +9572,7 @@
             var Dt = r(3744);
             const Nt = (0, Dt.Z)(Pt, [["render", function (t, e, r, o, i, a) {
                 var u = (0, n.resolveComponent)("Icon"), c = (0, n.resolveDirective)("tooltip");
-                return (0, n.openBlock)(), (0, n.createElementBlock)("div", gt, [(0, n.createElementVNode)("div", mt, [bt, (0, n.createElementVNode)("div", _t, [(0, n.createElementVNode)("h4", {
+                return (0, n.openBlock)(), (0, n.createElementBlock)("div", gt, [(0, n.createElementVNode)("div", mt, [(0, n.createElementVNode)("div", _t, [(0, n.createElementVNode)("h4", {
                     class: "font-normal text-80",
                     textContent: (0, n.toDisplayString)(a.label)
                 }, null, 8, wt)]), r.field.deletable ? ((0, n.openBlock)(), (0, n.createElementBlock)("div", xt, [(0, n.withDirectives)(((0, n.openBlock)(), (0, n.createElementBlock)("button", {
@@ -9775,7 +9775,7 @@
                             onClick: e[2] || (e[2] = function (t) {
                                 return c.addItem()
                             })
-                        }, " Add new " + (0, n.toDisplayString)(r.field.singularLabel.toLowerCase()), 1)])]))]
+                        }, " Toevoegen " + r.field.singularLabel.toLowerCase())])]))]
                     })), _: 1
                 }, 8, ["field", "errors"])
             }]]), zt = Wt
